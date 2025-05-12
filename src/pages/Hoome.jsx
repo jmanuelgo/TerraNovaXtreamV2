@@ -2,10 +2,16 @@ import React from 'react';
 import Card from '../componets/card';
 
 const servicios = [
-  { image: 'imagenes/inicio/solteros.jpg', title: 'Montañismo', description: 'Descripción del servicio de montañismo.' },
-  { image: 'imagenes/inicio/parejas.jpg', title: 'Ciclismo', description: 'Descripción del servicio de ciclismo.' },
-  { image: 'imagenes/inicio/petfriendly.jpg', title: 'Senderismo', description: 'Descripción del servicio de senderismo.' },
-  { image: 'imagenes/inicio/vallealto.jpg', title: 'Parapente', description: 'Descripción del servicio de parapente.' },
+  { image: 'imagenes/inicio/solteros.jpg', title: 'Tour Solteros', description: 'Descripción del servicio de tour solteros.' },
+  { image: 'imagenes/inicio/parejas.jpg', title: 'Tour parejas', description: 'Descripción del servicio de Tpur de pajeras.' },
+  { image: 'imagenes/inicio/petfriendly.jpg', title: 'Tour petfriendly', description: 'Descripción del servicio de Tour petfriendly.' },
+  { image: 'imagenes/inicio/vallealto.jpg', title: 'vallealto', description: 'Descripción del servicio de vallealto.' },
+];
+const espelismos = [
+  { image: 'imagenes/inicio/solteros.jpg', title: 'Tour Solteros', description: 'Descripción del servicio de tour solteros.' },
+  { image: 'imagenes/inicio/parejas.jpg', title: 'Tour parejas', description: 'Descripción del servicio de Tpur de pajeras.' },
+  { image: 'imagenes/inicio/petfriendly.jpg', title: 'Tour petfriendly', description: 'Descripción del servicio de Tour petfriendly.' },
+  { image: 'imagenes/inicio/vallealto.jpg', title: 'vallealto', description: 'Descripción del servicio de vallealto.' },
 ];
 function Hoome() {
   return (
@@ -45,16 +51,15 @@ function Hoome() {
       {/* Turismo de Aventura */}
       <section className="bg-green-700 py-10 text-white text-center">
         <h2 className="text-2xl font-bold mb-6">Especialista en Turismo de Aventura</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-6">
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Montañismo</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Ciclismo</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Senderismo</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Parapente</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6">
+          {espelismos.map((espelismo, index) => (
+            <Card key={index} {...espelismo} />
+          ))}
         </div>
       </section>
 
       {/* Dirección y horario */}
-      <footer className="bg-red-500 text-white py-10 px-4 text-center">
+      <footer className="bg-linear-to-r from-red-500 to-blue-500 text-white py-10 px-4 text-center">
         <h3 className="text-xl font-semibold mb-2">Dirección de Oficinas</h3>
         <p>Calle México entre 25 de Mayo y España</p>
         <h3 className="text-xl font-semibold mt-6 mb-2">Horario de Atención</h3>
