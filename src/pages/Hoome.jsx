@@ -1,31 +1,46 @@
 import React from 'react';
+import Card from '../componets/card';
 
+const servicios = [
+  { image: 'imagenes/inicio/solteros.jpg', title: 'Montañismo', description: 'Descripción del servicio de montañismo.' },
+  { image: 'imagenes/inicio/parejas.jpg', title: 'Ciclismo', description: 'Descripción del servicio de ciclismo.' },
+  { image: 'imagenes/inicio/petfriendly.jpg', title: 'Senderismo', description: 'Descripción del servicio de senderismo.' },
+  { image: 'imagenes/inicio/vallealto.jpg', title: 'Parapente', description: 'Descripción del servicio de parapente.' },
+];
 function Hoome() {
   return (
     <div className="bg-white text-gray-800">
       {/* Sección Hero */}
       <section
-        className="bg-cover bg-center text-white py-20 px-4"
+        className="relative text-white px-4"
         style={{
-          backgroundImage: `url('/machu-picchu.png')`, // Usa la ruta correcta
+          backgroundImage: `url('imagenes/inicio/Hero.jpg')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          height: '80vh', // Puedes ajustar este valor: 60vh, 100vh, 500px, etc.
         }}
       >
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">¡VIVE LA VIDA QUE QUIERES CONTAR!</h1>
-          <p className="text-lg md:text-xl font-light">¡Haz tus sueños realidad!</p>
+        
+        <div className="relative z-10 flex items-center justify-center h-full text-center">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              ¡VIVE LA VIDA QUE QUIERES CONTAR!
+            </h1>
+            <p className="text-lg md:text-xl font-light">¡Haz tus sueños realidad!</p>
+          </div>
         </div>
       </section>
 
-      {/* Oferta de Servicios */}
+      {/* Sección de Servicios */}
       <section className="bg-green-500 py-10 text-white text-center">
         <h2 className="text-2xl font-bold mb-6">Oferta de Servicios y Destinos Turísticos</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-6">
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Tour de Solteros CBBA</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">2da Competencia de Parejas</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Pet Friendly</div>
-          <div className="bg-white text-black p-4 rounded-xl shadow-md">Valle Alto</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 px-6">
+          {servicios.map((servicio, index) => (
+            <Card key={index} {...servicio} />
+          ))}
         </div>
       </section>
+
 
       {/* Turismo de Aventura */}
       <section className="bg-green-700 py-10 text-white text-center">
@@ -53,3 +68,4 @@ function Hoome() {
 }
 
 export default Hoome;
+
